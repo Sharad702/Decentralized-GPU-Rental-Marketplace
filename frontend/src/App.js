@@ -1,0 +1,1 @@
+const totalCost = ethers.utils.formatEther(price.mul(duration).toString(), { decimals: 6 }); 
