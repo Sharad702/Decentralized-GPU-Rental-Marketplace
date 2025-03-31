@@ -5,17 +5,9 @@ async function main() {
     
     const GpuRental = await hre.ethers.getContractFactory("GpuRental");
     const gpuRental = await GpuRental.deploy();
+    await gpuRental.waitForDeployment();
     
-    await gpuRental.deployed();
-    
-    console.log("GpuRental Contract deployed to:", gpuRental.address);
-    console.log("Waiting for block confirmations...");
-    
-    // Wait for 5 block confirmations
-    await gpuRental.deployTransaction.wait(5);
-    
-    console.log("Confirmed! Contract deployed successfully.");
-    console.log("Contract address:", gpuRental.address);
+    console.log("GpuRental deployed to:", await gpuRental.getAddress());
 }
 
 main()

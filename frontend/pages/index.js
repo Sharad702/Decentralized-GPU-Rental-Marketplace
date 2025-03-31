@@ -180,7 +180,6 @@ export default function Home() {
         setGpuLenders(gpus);
     } catch (error) {
         console.error("Error fetching GPUs:", error);
-        toast.error("Failed to fetch GPUs");
     } finally {
         setLoading(false);
     }
